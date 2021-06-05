@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewCoinFragment">
+
+    <fragment
+        android:id="@+id/addCountryFragment"
+        android:name="com.example.numiz.ui.adding.AddCountryFragment"
+        android:label="Новая страна"
+        tools:layout="@layout/fragment_add_country">
+        <action
+            android:id="@+id/action_addCountryFragment_to_addMintFragment"
+            app:destination="@id/addMintFragment" />
+        <action
+            android:id="@+id/action_addCountryFragment_to_viewCountryFragment"
+            app:destination="@id/viewCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMintFragment"
+        android:name="com.example.numiz.ui.adding.AddMintFragment"
+        android:label="Новый монетный двор"
+        tools:layout="@layout/fragment_add_mint">
+        <action
+            android:id="@+id/action_addMintFragment_to_addCountryFragment"
+            app:destination="@id/addCountryFragment" />
+        <action
+            android:id="@+id/action_addMintFragment_to_addCoinFragment"
+            app:destination="@id/addCoinFragment" />
+        <action
+            android:id="@+id/action_addMintFragment_to_viewMintFragment"
+            app:destination="@id/viewMintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCoinFragment"
+        android:name="com.example.numiz.ui.adding.AddCoinFragment"
+        android:label="Новая монетка"
+        tools:layout="@layout/fragment_add_coin">
+        <action
+            android:id="@+id/action_addCoinFragment_to_addMintFragment"
+            app:destination="@id/addMintFragment" />
+        <action
+            android:id="@+id/action_addCoinFragment_to_viewCoinFragment"
+            app:destination="@id/viewCoinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGlobalThemeFragment"
+        android:name="com.example.numiz.ui.adding.AddGlobalThemeFragment"
+        android:label="Новая Глобальная тема"
+        tools:layout="@layout/fragment_add_global_theme">
+        <action
+            android:id="@+id/action_addGlobalThemeFragment_to_addThemeFragment"
+            app:destination="@id/addThemeFragment" />
+        <action
+            android:id="@+id/action_addGlobalThemeFragment_to_addCollectionFragment"
+            app:destination="@id/addCollectionFragment" />
+        <action
+            android:id="@+id/action_addGlobalThemeFragment_to_viewGlobalThemeFragment"
+            app:destination="@id/viewGlobalThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCollectionFragment"
+        android:name="com.example.numiz.ui.adding.AddCollectionFragment"
+        android:label="Новая коллекция"
+        tools:layout="@layout/fragment_add_collection">
+        <action
+            android:id="@+id/action_addCollectionFragment_to_addGlobalThemeFragment"
+            app:destination="@id/addGlobalThemeFragment" />
+        <action
+            android:id="@+id/action_addCollectionFragment_to_addThemeFragment"
+            app:destination="@id/addThemeFragment" />
+        <action
+            android:id="@+id/action_addCollectionFragment_to_viewCollectionFragment"
+            app:destination="@id/viewCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addThemeFragment"
+        android:name="com.example.numiz.ui.adding.AddThemeFragment"
+        android:label="Новая тема"
+        tools:layout="@layout/fragment_add_theme">
+        <action
+            android:id="@+id/action_addThemeFragment_to_addGlobalThemeFragment"
+            app:destination="@id/addGlobalThemeFragment" />
+        <action
+            android:id="@+id/action_addThemeFragment_to_addCollectionFragment"
+            app:destination="@id/addCollectionFragment" />
+        <action
+            android:id="@+id/action_addThemeFragment_to_viewThemeFragment"
+            app:destination="@id/viewThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMintFragment"
+        android:name="com.example.numiz.ui.viewing.ViewMintFragment"
+        android:label="Монетные дворы"
+        tools:layout="@layout/fragment_view_mint">
+        <action
+            android:id="@+id/action_viewMintFragment_to_addMintFragment"
+            app:destination="@id/addMintFragment" />
+        <action
+            android:id="@+id/action_viewMintFragment_to_SVMintFragment"
+            app:destination="@id/SVMintFragment" />
+        <action
+            android:id="@+id/action_viewMintFragment_to_UMintFragment"
+            app:destination="@id/UMintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVMintFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVMintFragment"
+        android:label="Монетный двор"
+        tools:layout="@layout/fragment_s_v_mint">
+        <action
+            android:id="@+id/action_SVMintFragment_to_viewMintFragment"
+            app:destination="@id/viewMintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UMintFragment"
+        android:name="com.example.numiz.ui.update.UMintFragment"
+        android:label="Обновить монетный двор"
+        tools:layout="@layout/fragment_u_mint">
+        <action
+            android:id="@+id/action_UMintFragment_to_viewMintFragment"
+            app:destination="@id/viewMintFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCountryFragment"
+        android:name="com.example.numiz.ui.viewing.ViewCountryFragment"
+        android:label="Страны"
+        tools:layout="@layout/fragment_view_country">
+        <action
+            android:id="@+id/action_viewCountryFragment_to_addCountryFragment"
+            app:destination="@id/addCountryFragment" />
+        <action
+            android:id="@+id/action_viewCountryFragment_to_SVCountryFragment"
+            app:destination="@id/SVCountryFragment" />
+        <action
+            android:id="@+id/action_viewCountryFragment_to_UCountryFragment"
+            app:destination="@id/UCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVCountryFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVCountryFragment"
+        android:label="Страна"
+        tools:layout="@layout/fragment_s_v_country">
+        <action
+            android:id="@+id/action_SVCountryFragment_to_viewCountryFragment"
+            app:destination="@id/viewCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UCountryFragment"
+        android:name="com.example.numiz.ui.update.UCountryFragment"
+        android:label="Обновить страну"
+        tools:layout="@layout/fragment_u_country">
+        <action
+            android:id="@+id/action_UCountryFragment_to_viewCountryFragment"
+            app:destination="@id/viewCountryFragment" />
+        <action
+            android:id="@+id/action_UCountryFragment_to_viewCountryFragment2"
+            app:destination="@id/viewCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCoinFragment"
+        android:name="com.example.numiz.ui.viewing.ViewCoinFragment"
+        android:label="Монеты"
+        tools:layout="@layout/fragment_view_coin">
+        <action
+            android:id="@+id/action_viewCoinFragment_to_addCoinFragment"
+            app:destination="@id/addCoinFragment" />
+        <action
+            android:id="@+id/action_viewCoinFragment_to_SVCoinFragment"
+            app:destination="@id/SVCoinFragment" />
+        <action
+            android:id="@+id/action_viewCoinFragment_to_UCoinFragment"
+            app:destination="@id/UCoinFragment" />
+        <action
+            android:id="@+id/action_viewCoinFragment_to_VCoinWSFragment"
+            app:destination="@id/VCoinWSFragment" />
+        <action
+            android:id="@+id/action_viewCoinFragment_to_viewCoinGroupFragment"
+            app:destination="@id/viewCoinGroupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVCoinFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVCoinFragment"
+        android:label="Монета"
+        tools:layout="@layout/fragment_s_v_coin">
+        <action
+            android:id="@+id/action_SVCoinFragment_to_viewCoinFragment"
+            app:destination="@id/viewCoinFragment" />
+        <action
+            android:id="@+id/action_SVCoinFragment_to_VCoinWSFragment"
+            app:destination="@id/VCoinWSFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UCoinFragment"
+        android:name="com.example.numiz.ui.update.UCoinFragment"
+        android:label="Обновить монету"
+        tools:layout="@layout/fragment_u_coin">
+        <action
+            android:id="@+id/action_UCoinFragment_to_viewCoinFragment"
+            app:destination="@id/viewCoinFragment" />
+        <action
+            android:id="@+id/action_UCoinFragment_to_VCoinWSFragment"
+            app:destination="@id/VCoinWSFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewGlobalThemeFragment"
+        android:name="com.example.numiz.ui.viewing.ViewGlobalThemeFragment"
+        android:label="Глобальные тематики"
+        tools:layout="@layout/fragment_view_global_theme">
+        <action
+            android:id="@+id/action_viewGlobalThemeFragment_to_addGlobalThemeFragment"
+            app:destination="@id/addGlobalThemeFragment" />
+        <action
+            android:id="@+id/action_viewGlobalThemeFragment_to_SVGlobalThemeFragment"
+            app:destination="@id/SVGlobalThemeFragment" />
+        <action
+            android:id="@+id/action_viewGlobalThemeFragment_to_UGlobalThemeFragment"
+            app:destination="@id/UGlobalThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewThemeFragment"
+        android:name="com.example.numiz.ui.viewing.ViewThemeFragment"
+        android:label="Тематики"
+        tools:layout="@layout/fragment_view_theme">
+        <action
+            android:id="@+id/action_viewThemeFragment_to_addThemeFragment"
+            app:destination="@id/addThemeFragment" />
+        <action
+            android:id="@+id/action_viewThemeFragment_to_SVThemeFragment"
+            app:destination="@id/SVThemeFragment" />
+        <action
+            android:id="@+id/action_viewThemeFragment_to_UThemeFragment"
+            app:destination="@id/UThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVThemeFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVThemeFragment"
+        android:label="Тематика"
+        tools:layout="@layout/fragment_s_v_theme">
+        <action
+            android:id="@+id/action_SVThemeFragment_to_viewThemeFragment"
+            app:destination="@id/viewThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVGlobalThemeFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVGlobalThemeFragment"
+        android:label="Глобальная тематика"
+        tools:layout="@layout/fragment_s_v_global_theme">
+        <action
+            android:id="@+id/action_SVGlobalThemeFragment_to_viewGlobalThemeFragment"
+            app:destination="@id/viewGlobalThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UGlobalThemeFragment"
+        android:name="com.example.numiz.ui.update.UGlobalThemeFragment"
+        android:label="Обновить глобальную тематику"
+        tools:layout="@layout/fragment_u_global_theme">
+        <action
+            android:id="@+id/action_UGlobalThemeFragment_to_viewGlobalThemeFragment"
+            app:destination="@id/viewGlobalThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UThemeFragment"
+        android:name="com.example.numiz.ui.update.UThemeFragment"
+        android:label="Обновить тематику"
+        tools:layout="@layout/fragment_u_theme">
+        <action
+            android:id="@+id/action_UThemeFragment_to_viewThemeFragment"
+            app:destination="@id/viewThemeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCollectionFragment"
+        android:name="com.example.numiz.ui.viewing.ViewCollectionFragment"
+        android:label="Коллекции"
+        tools:layout="@layout/fragment_view_collection">
+        <action
+            android:id="@+id/action_viewCollectionFragment_to_addCollectionFragment"
+            app:destination="@id/addCollectionFragment" />
+        <action
+            android:id="@+id/action_viewCollectionFragment_to_SVCollectionFragment"
+            app:destination="@id/SVCollectionFragment" />
+        <action
+            android:id="@+id/action_viewCollectionFragment_to_UCollectionFragment"
+            app:destination="@id/UCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SVCollectionFragment"
+        android:name="com.example.numiz.ui.singleviewing.SVCollectionFragment"
+        android:label="Коллекция"
+        tools:layout="@layout/fragment_s_v_collection">
+        <action
+            android:id="@+id/action_SVCollectionFragment_to_viewCollectionFragment"
+            app:destination="@id/viewCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/UCollectionFragment"
+        android:name="com.example.numiz.ui.update.UCollectionFragment"
+        android:label="Обновление коллекции"
+        tools:layout="@layout/fragment_u_collection">
+        <action
+            android:id="@+id/action_UCollectionFragment_to_viewCollectionFragment"
+            app:destination="@id/viewCollectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/VCoinWSFragment"
+        android:name="com.example.numiz.ui.viewing.VCoinWSFragment"
+        android:label="fragment_v_coin_w_s"
+        tools:layout="@layout/fragment_v_coin_w_s" >
+        <action
+            android:id="@+id/action_VCoinWSFragment_to_viewCoinFragment"
+            app:destination="@id/viewCoinFragment" />
+        <action
+            android:id="@+id/action_VCoinWSFragment_to_SVCoinFragment"
+            app:destination="@id/SVCoinFragment" />
+        <action
+            android:id="@+id/action_VCoinWSFragment_to_UCoinFragment"
+            app:destination="@id/UCoinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewCoinGroupFragment"
+        android:name="com.example.numiz.ui.viewing.ViewCoinGroupFragment"
+        android:label="fragment_view_coin_group"
+        tools:layout="@layout/fragment_view_coin_group" >
+        <action
+            android:id="@+id/action_viewCoinGroupFragment_to_viewCoinFragment"
+            app:destination="@id/viewCoinFragment" />
+    </fragment>
+</navigation>
